@@ -37,7 +37,7 @@ const navItems=[
         link: '/about'
     },
     {
-        name: 'Contact',
+        name: 'C',
         link: '/contact'
     },
     {
