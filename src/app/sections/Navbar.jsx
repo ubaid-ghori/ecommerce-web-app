@@ -26,3 +26,28 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+const navItems=[
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'About',
+        link: '/about'
+    },
+    {
+        name: 'Contact',
+        link: '/contact'
+    },
+    {
+        name: 'Blog',
+        link: '/blog'
+    },
+    {
+        name: 'Shop',
+        link: '/shop'
+    },
+    {
+}
+]
