@@ -1,22 +1,20 @@
-// src/app/product/[id]/page.js
-
-"use client"; // Keep this line if you're using client-side functionality
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 const SingleProduct = ({ params }) => {
-  const { id } = params; // Get the product ID from the route params
+  const { id } = params;
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     if (id) {
       fetch(`https://dummyjson.com/products/${id}`)
-        .then(res => res.json())
-        .then(data => setProduct(data));
+        .then((res) => res.json())
+        .then((data) => setProduct(data));
     }
   }, [id]);
 
   if (!product) {
-    return <div>Loading...</div>; // Show a loading state while fetching
+    return <div>Loading...</div>;
   }
 
   return (
