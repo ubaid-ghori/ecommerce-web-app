@@ -1,11 +1,17 @@
 import Image from "next/image";
-import Products from "./sections/Products";
+import {ProductData} from './data/productdata'
 
 export default function Home() {
   return (
-   <>
-   {/* Navbar */}
-   <Products />
-   </>
+   <div>
+   {ProductData.map((product,index)=>(
+    <div key={index}>
+    <Image src={product.img} alt={product.name} width={200} height={200} />
+    <h2>{product.name}</h2>
+    <p>{product.price}</p>
+
+    </div>
+   ))}
+   </div>
   );
 }
