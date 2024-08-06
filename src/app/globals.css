@@ -3,3 +3,6 @@
 @tailwind utilities;
 
 
+.hero-image {
+    transition: background-image 0.5s ease-in-out;
+  }
