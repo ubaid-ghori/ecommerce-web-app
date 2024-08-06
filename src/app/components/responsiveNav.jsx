@@ -2,7 +2,12 @@ import React from 'react'
 
 const responsiveNav = () => {
   return (
-    <div>responsiveNav</div>
+    <div>
+        <div>
+            {/* card */}
+            
+        </div>
+    </div>
   )
 }
 
