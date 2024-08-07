@@ -8,8 +8,9 @@ export default function Home() {
     <>
     <Navbar />
     <Hero />
-    {/* <Products />
-  <Hero /> */}
+    
+    <Products />
+  {/* <Hero /> */}
     </>
   );
 }
