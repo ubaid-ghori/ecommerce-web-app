@@ -15,7 +15,7 @@ const Hero = () => {
             Shop Now
           </button>
         </div>
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 ">
           <img
             src="/assets/images/Heroimg.png"
             alt="Shoes"
