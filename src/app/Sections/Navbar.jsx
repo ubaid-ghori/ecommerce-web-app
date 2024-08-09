@@ -2,9 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaRegUser, FaSearch, FaCartArrowDown } from "react-icons/fa";
-import Search from '../components/Search';
 import ResponsiveNav from '../components/ResponsiveNav';
-import {  ShoppingCart } from 'lucide-react';
+import { Search, ShoppingCart } from 'lucide-react';
+import SearchInput from '../components/SearchInput';
 const navItems = [
   { name: 'Home', link: '/', special: true },
   { name: 'Store', link: '/' },
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className='flex items-center gap-6 text-xl'>
           
           <div className='hidden lg:flex relative'>
-           <Search />
+            <SearchInput />
           </div>
           <div className='bg-[#4C3BCF] rounded-full p-2 text-white cursor-pointer'>
             <ShoppingCart size={25} />

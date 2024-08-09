@@ -1,10 +1,11 @@
+import { Search } from 'lucide-react'
 import React from 'react'
 
-const Search = () => {
+const SearchInput= ({className}) => {
   return (
     <div>
         <div className='flex relative'>
-            <input type="text" placeholder='Search' className=' px-2 text-sm bg-slate-200 rounded-full p-2 w-full h-12' />
+            <input type="text" placeholder='Search' className=' px-2 text-sm bg-slate-200 rounded-full p-2 lg:w-72 w-full h-12' />
             <div className=' absolute flex justify-center items-center right-0  h-12 w-12 rounded-full bg-hover p-2 text-white cursor-pointer'>
             <Search  size={20} />
             </div>
@@ -13,4 +14,4 @@ const Search = () => {
   )
 }
 
-export default Search
+export default SearchInput

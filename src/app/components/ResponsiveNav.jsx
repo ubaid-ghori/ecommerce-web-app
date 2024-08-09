@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { CiMenuFries } from "react-icons/ci"; 
 import { IoClose } from "react-icons/io5";
 import Link from 'next/link';
-import Search from './Search';
+import SearchInput from './SearchInput';
 const ResponsiveNav = ({ navItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,7 +24,7 @@ const ResponsiveNav = ({ navItems }) => {
         ))}
 </div>
         <div>
-          <Search />
+          <SearchInput />
         </div>
       </div>
     </div>

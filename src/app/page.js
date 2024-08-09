@@ -4,6 +4,7 @@ import Image from "next/image";
 import AOS from 'aos';
 import Hero from "./Sections/Hero";
 import 'aos/dist/aos.css';
+import ProductCategory from "./Sections/ProductCategory";
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -15,7 +16,7 @@ export default function Home() {
   return (
     <>
     <Hero />
-
+    <ProductCategory />
     </>
   );
 }
