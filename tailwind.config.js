@@ -4,10 +4,18 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/Sections/**/*.{js,ts,jsx,tsx,mdx}",
+
+
   ],
   theme: {
     extend: {
       colors:{
+        bgColor:'#4C3BCF',
+        Text:'#000000',
+        desc:'#434343',
+        hover:'#4C3BCF',
 
       },
       fontFamily: {
