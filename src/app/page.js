@@ -4,10 +4,11 @@ import Image from "next/image";
 import AOS from 'aos';
 import Hero from "./Sections/Hero";
 import 'aos/dist/aos.css';
+import Products from "../app/Sections/FreshProducts";
+import Brands from "./Sections/Brands";
 import ProductCategory from "./Sections/ProductCategory";
-import Products from "./Products";
-import ProductCard from "./components/ProductCard";
-import AllProducts from "./AllProducts";
+import Sale from "./Sections/Sale";
+import Faqs from "./Sections/Faqs";
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -19,9 +20,12 @@ export default function Home() {
   return (
     <>
     <Hero />
-    {/* <ProductCategory /> */}
+    <ProductCategory />
     <Products />
-    {/* <AllProducts /> */}
+    <Brands />
+    <Sale />
+    <Faqs />
+ 
     </>
   );
 }

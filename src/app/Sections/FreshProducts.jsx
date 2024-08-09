@@ -1,13 +1,13 @@
 "use client";
-import data from './data/productdata';
+import data from '../data/productdata';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import Heading from './components/Heading';
-import Description from './components/Description';
-import ProductCard from './components/ProductCard';
+import Heading from '../components/Heading';
+import Description from '../components/Description';
+import ProductCard from '../components/ProductCard';
 
 const Products = () => {
   return (
