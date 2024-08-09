@@ -2,7 +2,8 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import Hero from "./Sections/Hero";
+import 'aos/dist/aos.css';
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -13,7 +14,7 @@ export default function Home() {
   }, []);
   return (
     <>
-
+    <Hero />
 
     </>
   );
