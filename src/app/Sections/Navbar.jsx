@@ -1,10 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaRegUser, FaSearch, FaCartArrowDown } from "react-icons/fa";
 import ResponsiveNav from '../components/ResponsiveNav';
-import { Search, ShoppingCart } from 'lucide-react';
 import SearchInput from '../components/SearchInput';
+import CartIcon from '../components/CartIcon';
 const navItems = [
   { name: 'Home', link: '/', special: true },
   { name: 'Store', link: '/' },
@@ -37,9 +36,7 @@ const Navbar = () => {
           <div className='hidden lg:flex relative'>
             <SearchInput />
           </div>
-          <div className='bg-[#4C3BCF] rounded-full p-2 text-white cursor-pointer'>
-            <ShoppingCart size={25} />
-          </div>
+         <CartIcon />
         </div>
       </div>
     </div>

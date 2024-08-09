@@ -5,6 +5,9 @@ import AOS from 'aos';
 import Hero from "./Sections/Hero";
 import 'aos/dist/aos.css';
 import ProductCategory from "./Sections/ProductCategory";
+import Products from "./Products";
+import ProductCard from "./components/ProductCard";
+import AllProducts from "./AllProducts";
 export default function Home() {
   useEffect(() => {
     AOS.init({
@@ -16,7 +19,9 @@ export default function Home() {
   return (
     <>
     <Hero />
-    <ProductCategory />
+    {/* <ProductCategory /> */}
+    <Products />
+    {/* <AllProducts /> */}
     </>
   );
 }

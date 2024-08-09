@@ -4,7 +4,7 @@ import { HeroData } from '../data/Herodata';
 const Hero = () => {
   return (
     <section className="bg-gradient-to-r from-[#280E5A] via-[#3C2992] to-[#190237] text-white py-16 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div className="lg-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 w-full text-center md:text-left mb-10 md:mb-0" data-aos="fade-right">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-6">{HeroData.title}</h1>
           <h2 className="text-5xl md:text-6xl font-semibold leading-tight mb-6">
