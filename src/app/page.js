@@ -12,9 +12,7 @@ import Faqs from "./Sections/Faqs";
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
-      once: true, 
-      easing: 'ease-in-out', 
+      duration: 1600,
     });
   }, []);
   return (

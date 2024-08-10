@@ -42,7 +42,7 @@ const Faqs = () => {
             </div>
           ))}
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:block" data-aos="fade-up">
           <img src="/assets/images/faqsImage.webp" alt="FAQs" />
         </div>
       </div>

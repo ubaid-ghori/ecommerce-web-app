@@ -21,7 +21,7 @@ const Products = () => {
       <Swiper
         spaceBetween={30}
         autoplay={{
-          delay: 2500,
+          delay: 1500,
           disableOnInteraction: false,
         }}
         navigation={false}
