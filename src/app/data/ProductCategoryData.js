@@ -10,14 +10,12 @@ export const ProductCategoryData = [
     name: "Sports",
     image:'/assets/images/Product Category/2.webp',
     link:'/'
-
   },
   {
     id: 3,
     name: "Formal",
     image:'/assets/images/Product Category/3.webp',
     link:'/'
-
   },
   {
     id: 4,
@@ -30,6 +28,5 @@ export const ProductCategoryData = [
     name: "Boots",
     image:'/assets/images/Product Category/5.webp',
     link:'/'
-
   }
 ]

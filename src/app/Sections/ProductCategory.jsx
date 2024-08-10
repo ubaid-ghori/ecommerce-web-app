@@ -20,7 +20,7 @@ const ProductCategory = () => {
             className='transform hover:-translate-y-2 transition-transform duration-300 border border-transparent   rounded-full'
           >
             <Link href={products.link}>
-              <Image src={products.image} alt={products.name} width={200} height={250} />
+              <Image src={products.image} alt={products.name} width={200} height={350} />
             </Link>
           </div>
         ))}
