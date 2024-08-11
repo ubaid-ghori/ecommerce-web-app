@@ -1,8 +1,15 @@
 import React from 'react'
-
+import SportsData from '../../../data/SportsData'
+import ProductCard from '../../../components/ProductCard'
 const Sports = () => {
   return (
-    <div>Sports</div>
+    <div className='px-20 pt-20 '>
+      <div className=' '>
+        {SportsData?.map((product,index)=>(
+          <ProductCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
+        ))}
+      </div>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ import CartIcon from './CartIcon';
 const ProductCard = ({img,title,prevPrice}) => {
   return (
     <div className="border rounded-lg shadow-md">
-      <div>
+      <div className=''>
       <div className="flex flex-col items-center">
         <div className='p-4'>
           <img src={img} alt={title} className="w-60 h-48 transition-transform duration-300 hover:scale-105 cursor-pointer " />
@@ -17,7 +17,7 @@ const ProductCard = ({img,title,prevPrice}) => {
          </div>
          <span className=" text-Text font-heading font-semibold text-md">{prevPrice}</span>
           <div>
-            <img src="/assets/images/ratingimage.png" className='w-20 h-10' alt="" />
+            <img src="/assets/images/ratingimage.png" className='w-20' alt="" />
           </div>
         </div>
       </div>
