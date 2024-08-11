@@ -7,7 +7,7 @@ const AllProducts = () => {
     return (
       <div>
         {ProductData.map((product, index) => (
-          <ProductCard product={product} key={index} />
+          <ProductCard product={product}   key={index} />
         ))}
       </div>
     );
