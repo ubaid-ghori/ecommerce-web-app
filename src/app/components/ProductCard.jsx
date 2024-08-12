@@ -6,7 +6,7 @@ const ProductCard = ({img,title,prevPrice}) => {
       <div className=''>
       <div className="flex flex-col items-center">
         <div className='p-4'>
-          <img src={img} alt={title} className="w-60 h-48 transition-transform duration-300 hover:scale-105 cursor-pointer " />
+          <img src={img} alt={title} className=" transition-transform duration-300 hover:scale-105 cursor-pointer " />
         </div>
         <div className="mt-10 p-4 pt-10 pb-10 bg-gray-100 w-full cursor-pointer">
          <div className='flex justify-between '>
