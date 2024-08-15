@@ -1,9 +1,9 @@
-// Sports.js
 "use client";
 import React, { useState } from 'react';
 import SportsData from '../../../data/SportsData';
 import ProductCategoryCard from '../../../components/ProductCategoryCards';
 import Pagination from '../../../components/Pagination'; 
+import Link from 'next/link';
 
 const ITEMS_PER_PAGE = 6; 
 
@@ -22,13 +22,13 @@ const Sports = () => {
     <div className='px-20 pt-20'>
       <div className='flex flex-wrap gap-10'>
         {currentProducts.map((product, index) => (
-          <ProductCategoryCard 
-            key={index} 
-            product={product} 
-            img={product.img} 
-            title={product.title} 
-            prevPrice={product.prevPrice} 
-          />
+          <Link key={index} href={`/Sports/${product?.id}`}>
+            <ProductCategoryCard 
+              img={product.img} 
+              title={product.title} 
+              prevPrice={product.prevPrice} 
+            />
+          </Link>
         ))}
       </div>
 
