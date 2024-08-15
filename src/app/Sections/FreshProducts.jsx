@@ -9,6 +9,7 @@ import Heading from '../components/Heading';
 import Description from '../components/Description';
 import ProductCard from '../components/ProductCard';
 import Button from '../components/Button';
+import { useRouter } from 'next/navigation';
 const Products = () => {
   const [item, setItem] = useState(data);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -18,7 +19,7 @@ const Products = () => {
     setItem(updatedItem);
     setActiveCategory(cateItem);
   };
-
+ const router = useRouter()
   return (
     <div className='px-8 py-20'>
       <div className=''>
@@ -84,7 +85,7 @@ const Products = () => {
         ))}
       </Swiper>
       <div className=' flex justify-center items-center pt-20'>
-        <Button>VIEW ALL PRODUCTS</Button>
+        <Button onClick={()=>router.push('/Products')}>VIEW ALL PRODUCTS</Button>
       </div>
     </div>
   );
