@@ -1,12 +1,12 @@
 import React from 'react'
 import FormalData from '../../../data/FormalData'
-import ProductCard from '../../../components/ProductCard'
+import ProductCategoryCard from '../../../components/ProductCategoryCards'
 const Formal = () => {
   return (
-    <div className='px-20  pt-20 '>
-      <div className=' '>
+    <div className='px-20 pt-20 '>
+      <div className='flex flex-wrap gap-10 justify-center items-center '>
         {FormalData?.map((product,index)=>(
-          <ProductCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
+          <ProductCategoryCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
         ))}
       </div>
     </div>

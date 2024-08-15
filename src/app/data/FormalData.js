@@ -13,7 +13,7 @@ const FormalData = [
   },
   {
     img: "/assets/images/Formal/2.webp",
-    title: "React Element 55 Premium",
+    title: "React Element 55 ",
     prevPrice: "$160.00",
     newPrice: "$120.00",
     company: "Nike",

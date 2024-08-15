@@ -39,15 +39,6 @@ const BootsData = [
     category: "sneakers",
   },
   {
-    img: "/assets/images/Boots/5.webp",
-    title: "Blazer Low '80 Vintage",
-    prevPrice: "$140.00",
-    newPrice: "$100.00",
-    company: "Nike",
-    color: "white",
-    category: "sneakers",
-  },
-  {
     img: "/assets/images/Boots/6.webp",
     title: "Air Jordan 1 Retro",
     prevPrice: "$210.00",
@@ -101,15 +92,7 @@ const BootsData = [
     color: "white",
     category: "sneakers",
   },
-  {
-    img: "/assets/images/Boots/12.jpg",
-    title: "React Infinity Run 3",
-    prevPrice: "$190.00",
-    newPrice: "$145.00",
-    company: "Nike",
-    color: "white",
-    category: "sneakers",
-  },
+ 
   {
     img: "/assets/images/Boots/13.webp",
     title: "Air Huarache 2023",

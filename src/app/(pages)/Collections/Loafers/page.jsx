@@ -1,12 +1,12 @@
 import React from 'react'
 import LoafersData from '../../../data/LoafersData'
-import ProductCard from '../../../components/ProductCard'
+import ProductCategoryCard from '../../../components/ProductCategoryCards'
 const Loafers = () => {
   return (
     <div className='px-20  pt-20 '>
-      <div className=' '>
+      <div className='flex flex-wrap justify-center items-start gap-10'>
         {LoafersData?.map((product,index)=>(
-          <ProductCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
+          <ProductCategoryCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
         ))}
       </div>
     </div>
