@@ -2,7 +2,7 @@
 import { useParams } from 'next/navigation'
 import React from 'react'
 import Sportsdata from '../../../data/SportsData';
-
+import DetailCard from '../../../components/DetailCard';
 const SportsDetails = () => {
    const {id} = useParams();
    console.log(id);
@@ -10,11 +10,7 @@ const SportsDetails = () => {
   return (
     <div>
         {product?.map((item,index)=>(
-            
-            <div key={index}>
-                <img src={item.img} alt="" />
-                <h1>{item.title}</h1>
-            </div>
+           <DetailCard image={item.img} title={item.title} price={item.prevPrice} key={index}/>
         ))}
     </div>
   )

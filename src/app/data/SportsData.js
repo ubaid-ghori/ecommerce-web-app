@@ -24,7 +24,7 @@ const Sportsdata = [
   },
   {
     id:3,
-    img: "/assets/images/Sports/3.webp",
+    img: "/assets/images/Sports/10.webp",
     title: "Air Force 1",
     prevPrice: "$150.00",
     newPrice: "$110.00",
@@ -94,7 +94,7 @@ const Sportsdata = [
   },
   {
     id:10,
-    img: "/assets/images/Sports/10.webp",
+    img: "/assets/images/Sports/3.webp",
     title: "Dunk Low Retro",
     prevPrice: "$120.00",
     newPrice: "$95.00",
