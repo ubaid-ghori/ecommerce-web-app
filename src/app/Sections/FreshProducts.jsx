@@ -10,6 +10,7 @@ import Description from '../components/Description';
 import ProductCard from '../components/ProductCard';
 import Button from '../components/Button';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const Products = () => {
   const [item, setItem] = useState(data);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -80,7 +81,9 @@ const Products = () => {
       >
         {item.map((product, index) => (
           <SwiperSlide key={index} className='pt-20'>
-      <ProductCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
+            <Link href={`/Product/${product.id}`}>
+            <ProductCard product={product} img={product.img} title={product.title} prevPrice={product.prevPrice} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

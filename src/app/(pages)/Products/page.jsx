@@ -1,9 +1,9 @@
-
 "use client";
 import React, { useState } from 'react';
 import ProductCard from '../../components/ProductCard';
 import ProductData from '../../data/productdata';
 import Pagination from '../../components/Pagination'; 
+import Link from 'next/link';
 
 const ITEMS_PER_PAGE = 8; 
 
@@ -22,12 +22,14 @@ const Products = () => {
     <div>
       <div className='lg:px-20 px-4 mt-20 flex flex-wrap  items-center gap-10'>
         {currentProducts.map((product, index) => (
+          <Link href={`/Product/${product.id}`}>
           <ProductCard
             key={index}
             img={product.img}
             title={product.title}
             prevPrice={product.prevPrice}
           />
+          </Link>
         ))}
       </div>
 
