@@ -3,6 +3,8 @@ import { ShoppingCart } from "lucide-react";
 
 const BootsData = [
   {
+    
+    id:1,
     img: "/assets/images/Boots/1.webp",
     title: "Air Max 270 React 2.0",
     prevPrice: "$190.00",
@@ -12,6 +14,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:2,
     img: "/assets/images/Boots/2.webp",
     title: "React Element 55 Ultra",
     prevPrice: "$170.00",
@@ -21,6 +24,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:3,
     img: "/assets/images/Boots/3.webp",
     title: "Air Force 1 Shadow 2.0",
     prevPrice: "$180.00",
@@ -30,6 +34,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:4,
     img: "/assets/images/Boots/4.webp",
     title: "Zoom Fly 4",
     prevPrice: "$160.00",
@@ -39,6 +44,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:5,
     img: "/assets/images/Boots/6.webp",
     title: "Air Jordan 1 Retro",
     prevPrice: "$210.00",
@@ -48,6 +54,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:6,
     img: "/assets/images/Boots/7.jpg",
     title: "Free RN 6.0",
     prevPrice: "$150.00",
@@ -57,6 +64,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:7,
     img: "/assets/images/Boots/8.webp",
     title: "Air Zoom Pegasus 38",
     prevPrice: "$160.00",
@@ -66,6 +74,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:8,
     img: "/assets/images/Boots/9.webp",
     title: "VaporMax Flyknit",
     prevPrice: "$250.00",
@@ -75,6 +84,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:9,
     img: "/assets/images/Boots/10.webp",
     title: "Dunk Low Retro",
     prevPrice: "$160.00",
@@ -84,6 +94,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:10,
     img: "/assets/images/Boots/11.webp",
     title: "Court Vision Low",
     prevPrice: "$130.00",
@@ -94,6 +105,7 @@ const BootsData = [
   },
  
   {
+    id:11,
     img: "/assets/images/Boots/13.webp",
     title: "Air Huarache 2023",
     prevPrice: "$130.00",
@@ -103,6 +115,7 @@ const BootsData = [
     category: "sneakers",
   },
   {
+    id:12,
     img: "/assets/images/Boots/14.avif",
     title: "Air Huarache Ultra",
     prevPrice: "$140.00",

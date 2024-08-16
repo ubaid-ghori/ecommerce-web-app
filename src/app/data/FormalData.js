@@ -3,6 +3,7 @@ import { ShoppingCart } from "lucide-react";
 
 const FormalData = [
   {
+    id: 1,
     img: "/assets/images/Formal/1.webp",
     title: "Air Max 270 React",
     prevPrice: "$170.00",
@@ -12,8 +13,9 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 2,
     img: "/assets/images/Formal/2.webp",
-    title: "React Element 55 ",
+    title: "React Element 55",
     prevPrice: "$160.00",
     newPrice: "$120.00",
     company: "Nike",
@@ -21,6 +23,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 3,
     img: "/assets/images/Formal/3.webp",
     title: "Air Force 1 Shadow",
     prevPrice: "$160.00",
@@ -30,6 +33,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 4,
     img: "/assets/images/Formal/4.webp",
     title: "Zoom Fly 3",
     prevPrice: "$140.00",
@@ -39,6 +43,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 5,
     img: "/assets/images/Formal/5.webp",
     title: "Blazer Low '77 Vintage",
     prevPrice: "$130.00",
@@ -48,6 +53,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 6,
     img: "/assets/images/Formal/6.webp",
     title: "Air Jordan 1 Mid",
     prevPrice: "$200.00",
@@ -57,6 +63,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 7,
     img: "/assets/images/Formal/7.webp",
     title: "Free RN 5.0",
     prevPrice: "$140.00",
@@ -66,6 +73,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 8,
     img: "/assets/images/Formal/8.webp",
     title: "Air Zoom Winflo 7",
     prevPrice: "$150.00",
@@ -75,6 +83,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 9,
     img: "/assets/images/Formal/9.webp",
     title: "VaporMax 2021",
     prevPrice: "$240.00",
@@ -84,6 +93,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 10,
     img: "/assets/images/Formal/10.webp",
     title: "Dunk High Retro",
     prevPrice: "$140.00",
@@ -93,6 +103,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 11,
     img: "/assets/images/Formal/11.webp",
     title: "Court Vision Mid",
     prevPrice: "$120.00",
@@ -102,6 +113,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 12,
     img: "/assets/images/Formal/12.webp",
     title: "React Infinity Run 2",
     prevPrice: "$180.00",
@@ -111,6 +123,7 @@ const FormalData = [
     category: "sneakers",
   },
   {
+    id: 13,
     img: "/assets/images/Formal/13.avif",
     title: "Air Huarache Run",
     prevPrice: "$120.00",

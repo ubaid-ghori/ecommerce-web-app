@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import LoafersData from '../../../data/LoafersData';
 import ProductCategoryCard from '../../../components/ProductCategoryCards';
 import Pagination from '../../../components/Pagination'; 
+import Link from 'next/link';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -22,6 +23,7 @@ const Loafers = () => {
     <div className='px-20 pt-20'>
       <div className='flex flex-wrap justify-center items-start gap-10'>
         {currentProducts.map((product, index) => (
+          <Link key={index} href={`/Loafers/${product?.id}`}>
           <ProductCategoryCard 
             key={index} 
             product={product} 
@@ -29,6 +31,7 @@ const Loafers = () => {
             title={product.title} 
             prevPrice={product.prevPrice} 
           />
+         </Link>
         ))}
       </div>
 

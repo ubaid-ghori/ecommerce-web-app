@@ -3,6 +3,7 @@ import { ShoppingCart } from "lucide-react";
 
 const LoaferData = [
   {
+    id:1,
     img: "/assets/images/Loafer/1.webp",
     title: "Air Max 270 React 2.0",
     prevPrice: "$190.00",
@@ -12,6 +13,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:2,
     img: "/assets/images/Loafer/2.webp",
     title: "React Element 55 Ultra",
     prevPrice: "$170.00",
@@ -21,6 +23,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:3,
     img: "/assets/images/Loafer/3.webp",
     title: "Air Force 1 Shadow 2.0",
     prevPrice: "$180.00",
@@ -30,6 +33,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:4,
     img: "/assets/images/Loafer/4.webp",
     title: "Zoom Fly 4",
     prevPrice: "$160.00",
@@ -39,6 +43,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:5,
     img: "/assets/images/Loafer/5.webp",
     title: "Blazer Low '80 Vintage",
     prevPrice: "$140.00",
@@ -48,6 +53,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:6,
     img: "/assets/images/Loafer/6.webp",
     title: "Air Jordan 1 Retro",
     prevPrice: "$210.00",
@@ -57,6 +63,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:7,
     img: "/assets/images/Loafer/7.webp",
     title: "Free RN 6.0",
     prevPrice: "$150.00",
@@ -66,6 +73,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:8,
     img: "/assets/images/Loafer/8.webp",
     title: "Air Zoom Pegasus 38",
     prevPrice: "$160.00",
@@ -74,7 +82,8 @@ const LoaferData = [
     color: "white",
     category: "sneakers",
   },
-  {
+  { 
+    id:9,
     img: "/assets/images/Loafer/9.webp",
     title: "VaporMax Flyknit",
     prevPrice: "$250.00",
@@ -84,6 +93,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:10,
     img: "/assets/images/Loafer/10.webp",
     title: "Dunk Low Retro",
     prevPrice: "$160.00",
@@ -93,6 +103,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:11,
     img: "/assets/images/Loafer/11.webp",
     title: "Court Vision Low",
     prevPrice: "$130.00",
@@ -102,6 +113,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:12,
     img: "/assets/images/Loafer/12.jpg",
     title: "React Infinity Run 3",
     prevPrice: "$190.00",
@@ -111,6 +123,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:14,
     img: "/assets/images/Loafer/13.webp",
     title: "Air Huarache 2023",
     prevPrice: "$130.00",
@@ -120,6 +133,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:15,
     img: "/assets/images/Loafer/14.avif",
     title: "Air Huarache Ultra",
     prevPrice: "$140.00",
@@ -129,6 +143,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:16,
     img: "/assets/images/Loafer/15.avif",
     title: "Air Huarache SE",
     prevPrice: "$150.00",
@@ -138,6 +153,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:17,
     img: "/assets/images/Loafer/16.webp",
     title: "Air Huarache Premium",
     prevPrice: "$160.00",
@@ -147,6 +163,7 @@ const LoaferData = [
     category: "sneakers",
   },
   {
+    id:18,
     img: "/assets/images/Loafer/17.webp",
     title: "Air Huarache Elite",
     prevPrice: "$170.00",

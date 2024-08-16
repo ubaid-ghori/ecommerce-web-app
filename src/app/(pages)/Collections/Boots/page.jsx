@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import BootsData from '../../../data/BootsData';
 import ProductCategoryCard from '../../../components/ProductCategoryCards';
 import Pagination from '../../../components/Pagination'; // Import the Pagination component
+import Link from 'next/link';
 
 const ITEMS_PER_PAGE = 6;
 
@@ -22,6 +23,7 @@ const Boots = () => {
     <div className='px-20 pt-20'>
       <div className='flex flex-wrap gap-10'>
         {currentProducts.map((product, index) => (
+         <Link href={`/Boots/${product.id}`} key={index}>
           <ProductCategoryCard 
             key={index} 
             product={product} 
@@ -29,6 +31,7 @@ const Boots = () => {
             title={product.title} 
             prevPrice={product.prevPrice} 
           />
+         </Link>
         ))}
       </div>
 
