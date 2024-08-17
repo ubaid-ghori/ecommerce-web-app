@@ -4,6 +4,7 @@ import SportsData from '../../../data/SportsData';
 import ProductCategoryCard from '../../../components/ProductCategoryCards';
 import Pagination from '../../../components/Pagination'; 
 import Link from 'next/link';
+import FilterCard from '../../../components/FilterCard'
 const ITEMS_PER_PAGE = 6; 
 
 const Sports = () => {
@@ -18,13 +19,12 @@ const Sports = () => {
   };
 
   return (
-    <div className='px-20 pt-20'>
-    <div>
-        
-        <div>
-        
+    <div className='lg:px-10 px-4 pt-20'>
+    <div className='flex  '>
+        <div className='w-[40%]'>
+      <FilterCard />
         </div>
-        <div className='flex flex-wrap gap-10'>
+        <div className='flex flex-wrap justify-center gap-5 pt-10  '>
           {currentProducts.map((product, index) => (
             <Link key={index} href={`/Sports/${product?.id}`}>
               <ProductCategoryCard 

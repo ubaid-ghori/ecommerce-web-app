@@ -115,7 +115,7 @@ const Sportsdata = [
   {
     id:13,
     img: "/assets/images/Sports/12.webp",
-    title: "React Infinity Run Flyknit",
+    title: "React Infinity Run ",
     prevPrice: "$160.00",
     newPrice: "$130.00",
     company: "Nike",

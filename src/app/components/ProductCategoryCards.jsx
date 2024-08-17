@@ -6,11 +6,11 @@ const ProductCard = ({img,title,prevPrice}) => {
       <div className=''>
       <div className="flex flex-col items-center">
         <div className='w-full h-full'>
-          <img src={img} alt={title} className=" cursor-pointer " />
+          <img src={img} alt={title} className=" w-80 object-fill cursor-pointer " />
         </div>
         <div className="p-4 pt-10 pb-10 w-full cursor-pointer">
          <div className='flex justify-between '>
-         <h2 className="text-2xl font-semibold font-heading text-Text  ">{title}</h2>
+         <h2 className="text-lg font-semibold font-heading text-Text max-w-sm  ">{title}</h2>
           <div className=' '>
               <CartIcon />
             </div>
