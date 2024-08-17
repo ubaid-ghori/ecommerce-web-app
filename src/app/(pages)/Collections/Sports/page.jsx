@@ -19,10 +19,8 @@ const Sports = () => {
 
   return (
     <div className='px-20 pt-20'>
-
-
     <div>
-        {/*  Filter  */}
+        
         <div>
         
         </div>
