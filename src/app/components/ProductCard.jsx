@@ -5,7 +5,7 @@ const ProductCard = ({ img, title, prevPrice }) => {
   return (
     <div className="border rounded-lg shadow-md">
       <div className="flex flex-col items-center">
-        <div className="w-full flex justify-center items-center">
+        <div className="w-full  flex justify-center items-center">
           <img
             src={img}
             alt={title}

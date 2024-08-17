@@ -1,9 +1,5 @@
-import React from 'react'
-
-export default function loading() {
-  return (
-    <div>
-      loading..
-    </div>
-  )
+import SkeletonCard from './components/SkeletonCard'
+export default function Loading() {
+  // You can add any UI inside Loading, including a Skeleton.
+  return <SkeletonCard />
 }

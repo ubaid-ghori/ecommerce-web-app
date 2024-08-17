@@ -4,7 +4,6 @@ import SportsData from '../../../data/SportsData';
 import ProductCategoryCard from '../../../components/ProductCategoryCards';
 import Pagination from '../../../components/Pagination'; 
 import Link from 'next/link';
-
 const ITEMS_PER_PAGE = 6; 
 
 const Sports = () => {
