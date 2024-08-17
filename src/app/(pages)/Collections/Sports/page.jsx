@@ -19,17 +19,25 @@ const Sports = () => {
 
   return (
     <div className='px-20 pt-20'>
-      <div className='flex flex-wrap gap-10'>
-        {currentProducts.map((product, index) => (
-          <Link key={index} href={`/Sports/${product?.id}`}>
-            <ProductCategoryCard 
-              img={product.img} 
-              title={product.title} 
-              prevPrice={product.prevPrice} 
-            />
-          </Link>
-        ))}
-      </div>
+
+
+    <div>
+        {/*  Filter  */}
+        <div>
+        
+        </div>
+        <div className='flex flex-wrap gap-10'>
+          {currentProducts.map((product, index) => (
+            <Link key={index} href={`/Sports/${product?.id}`}>
+              <ProductCategoryCard 
+                img={product.img} 
+                title={product.title} 
+                prevPrice={product.prevPrice} 
+              />
+            </Link>
+          ))}
+        </div>
+    </div>
 
       <Pagination 
         currentPage={currentPage} 
