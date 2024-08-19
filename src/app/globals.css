@@ -9,4 +9,22 @@
     color: #FFD700; 
   }
   
-  
+  .radio {
+    border: 1px solid black;
+    width: 20px;  
+    height: 20px; 
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+    outline: none;
+    border-radius: 50%;
+  }
+
+  .radio:checked {
+    background-color: #5448ad;
+    box-shadow: inset 0 0 0 6px #8174e0;
+    border: none;
+  }
+
+ 
