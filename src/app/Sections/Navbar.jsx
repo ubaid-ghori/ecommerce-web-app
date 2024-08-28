@@ -6,7 +6,7 @@ import SearchInput from '../components/SearchInput';
 import CartIcon from '../components/CartIcon';
 const navItems = [
   { name: 'Home', link: '/', special: true },
-  { name: 'Store', link: '/' },
+  { name: 'Store', link: '/Products' },
   { name: 'Search', link: '/' },
   { name: 'Cart', link: '/' },
   { name: 'Account', link: '/' },
