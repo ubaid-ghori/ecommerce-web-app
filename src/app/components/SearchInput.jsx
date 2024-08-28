@@ -45,6 +45,8 @@ const SearchInput = ({ className }) => {
           <Search size={20} />
         </button>
       </form>
+      {/* <div className=" absolute bg-gray-50 h-60 w-full shadow-lg mt-2 rounded-lg  ">
+      </div> */}
     </div>
   );
 };
