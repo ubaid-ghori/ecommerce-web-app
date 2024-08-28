@@ -9,13 +9,19 @@ const SearchInput = ({ className }) => {
   const router = useRouter();
 
   function handleSearchClick(e) {
-    if (searchValue?.trim() !== "") {
-      e.preventDefault();
+    e.preventDefault();
+
+    if (searchValue.trim() !== "") {
       const searchItem = ProductCategoryData.filter((item) =>
         item?.name?.toLowerCase().includes(searchValue.toLowerCase())
       );
-      router.push(searchItem[0]?.link);
+
+      if (searchItem.length > 0) {
+        router.push(searchItem[0].link);
+      } 
+      
       setSearchValue("");
+      return;
     } else {
       alert("Please enter a valid search term");
     }
