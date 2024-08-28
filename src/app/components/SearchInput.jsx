@@ -1,50 +1,46 @@
 "use client";
-import { Search } from 'lucide-react';
-import React, { useState } from 'react';
+import { Search } from "lucide-react";
+import React, { useState } from "react";
+import { ProductCategoryData } from "../data/ProductCategoryData";
+import { useRouter } from "next/navigation";
 
 const SearchInput = ({ className }) => {
-  const productsList = [
-    
-  ];
-
-  const [products, setProducts] = useState(productsList);
   const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
 
-  function handleSearchClick() {
-    if (searchValue === "") {
-      setProducts(productsList);
-      return;
+  function handleSearchClick(e) {
+    if (searchValue?.trim() !== "") {
+      e.preventDefault();
+      const searchItem = ProductCategoryData.filter((item) =>
+        item?.name?.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      router.push(searchItem[0]?.link);
+      setSearchValue("");
+    } else {
+      alert("Please enter a valid search term");
     }
-    const filterBySearch = productsList.filter((item) => {
-      return item.toLowerCase().includes(searchValue.toLowerCase());
-    });
-    setProducts(filterBySearch);
   }
 
   return (
     <div>
-      <div className='flex relative'>
+      <form className="flex relative">
         <input
           type="text"
-          placeholder='Search'
-          className='px-2 text-sm bg-slate-200 rounded-full p-2 lg:w-72 w-full h-12'
-          onChange={e => setSearchValue(e.target.value)} 
+          placeholder="Search"
+          className="px-2 text-sm bg-slate-200 rounded-full p-2 lg:w-72 w-full h-12"
+          onChange={(e) => setSearchValue(e.target.value)}
           value={searchValue}
         />
-        <div
-          className='absolute flex justify-center items-center right-0 h-12 w-12 rounded-full bg-hover p-2 text-white cursor-pointer'
-          onClick={handleSearchClick} 
+        <button
+          type="submit"
+          className="absolute flex justify-center items-center right-0 h-12 w-12 rounded-full bg-hover p-2 text-white cursor-pointer"
+          onClick={handleSearchClick}
         >
           <Search size={20} />
-        </div>
-      </div>
-      {products.map((product, index) => {
-        return (
-          <div key={index}>{product}</div> 
-        );
-      })}
+        </button>
+      </form>
     </div>
   );
-}
+};
 
 export default SearchInput;
