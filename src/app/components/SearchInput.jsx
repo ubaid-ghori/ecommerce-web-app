@@ -1,5 +1,5 @@
 "use client";
-import { Search } from "lucide-react";
+import { Clock, Search, X } from "lucide-react";
 import React, { useState } from "react";
 import { ProductCategoryData } from "../data/ProductCategoryData";
 import { useRouter } from "next/navigation";
@@ -15,11 +15,11 @@ const SearchInput = ({ className }) => {
       const searchItem = ProductCategoryData.filter((item) =>
         item?.name?.toLowerCase().includes(searchValue.toLowerCase())
       );
+      console.log(searchValue)
 
       if (searchItem.length > 0) {
         router.push(searchItem[0].link);
       } 
-      
       setSearchValue("");
       return;
     } else {
@@ -37,6 +37,19 @@ const SearchInput = ({ className }) => {
           onChange={(e) => setSearchValue(e.target.value)}
           value={searchValue}
         />
+         {/* <div className=" absolute bg-gray-50 h-60 w-full top-10 shadow-lg mt-2 rounded-xl  ">
+          <div className=" px-4 pt-4 flex items-center justify-between bg-gray-100 p-2 cursor-pointer ">
+            <Clock />
+            <div className=" flex-1 mx-2">
+              {
+                searchValue.map((item)=>{
+                  <li>{item}</li>
+                })
+              }
+            </div>
+            <X />
+          </div>
+      </div> */}
         <button
           type="submit"
           className="absolute flex justify-center items-center right-0 h-12 w-12 rounded-full bg-hover p-2 text-white cursor-pointer"
@@ -45,8 +58,7 @@ const SearchInput = ({ className }) => {
           <Search size={20} />
         </button>
       </form>
-      {/* <div className=" absolute bg-gray-50 h-60 w-full shadow-lg mt-2 rounded-lg  ">
-      </div> */}
+     
     </div>
   );
 };
