@@ -7,9 +7,9 @@ import CartIcon from '../components/CartIcon';
 const navItems = [
   { name: 'Home', link: '/', special: true },
   { name: 'Store', link: '/Products' },
-  { name: 'Search', link: '/' },
-  { name: 'Cart', link: '/' },
-  { name: 'Account', link: '/' },
+  { name: 'About', link: '/About' },
+  { name: 'Blog', link: '/' },
+  { name: 'Contact', link: '/' },
 ];
 
 const Navbar = () => {
