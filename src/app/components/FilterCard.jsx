@@ -17,11 +17,9 @@ const FilterCard = ({ setFilters }) => {
                 <Filter size={30} />
                 <h2 className='text-xl font-heading text-Text font-semibold'>Filter</h2>
             </div>
-
-
             <div className='pt-10'>
                 <h2 className='font-semibold text-2xl text-Text font-heading'>Price</h2>
-                <div className='flex  gap-4 items-center mt-5'>
+                <div className='flex gap-4 items-center mt-5'>
                     <input 
                         type="radio" 
                         className='radio' 
@@ -31,8 +29,7 @@ const FilterCard = ({ setFilters }) => {
                     />
                     <p className='text-Text font-heading text-lg font-medium'>All</p>
                 </div>
-              <div className=' flex'>
-              <div className='flex gap-4 items-center mt-2'>
+                <div className='flex gap-4 items-center mt-2'>
                     <input 
                         type="radio" 
                         className='radio' 
@@ -62,7 +59,6 @@ const FilterCard = ({ setFilters }) => {
                     />
                     <p className='text-Text font-heading text-lg font-medium'>Over $200</p>
                 </div>
-              </div>
             </div>
         </div>
     );
