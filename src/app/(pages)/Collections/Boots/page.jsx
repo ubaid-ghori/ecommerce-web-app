@@ -54,6 +54,7 @@ const Boots = () => {
         {currentProducts.map((product, index) => (
          <Link href={`/Boots/${product.id}`} key={index}>
           <ProductCategoryCard 
+          id={product.id}
             key={index} 
             product={product} 
             img={product.img} 

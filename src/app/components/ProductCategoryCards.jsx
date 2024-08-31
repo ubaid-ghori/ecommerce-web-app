@@ -1,10 +1,17 @@
 import React from 'react';
 import CartIcon from './CartIcon';
-import { useSelector } from 'react-redux';
-
-const ProductCard = ({ img, title, prevPrice }) => {
+import { useSelector,useDispatch } from 'react-redux';
+import { addToCart } from '../Stores/cart';
+const ProductCard = ({ id,img, title, prevPrice }) => {
   const carts = useSelector(store => store.cart.items);
   console.log(carts);
+  const dispatch = useDispatch();
+  const handleAddToCart=()=>{
+    dispatch(addToCart({
+      productId:id,
+      quantity:1
+    }))
+  }
 
   return (
     <div className="border rounded-lg shadow-md">
@@ -16,7 +23,7 @@ const ProductCard = ({ img, title, prevPrice }) => {
           <div className="flex justify-between">
             <h2 className="text-lg font-semibold font-heading text-Text max-w-sm">{title}</h2>
             <div>
-              <CartIcon />
+              <CartIcon onClick={handleAddToCart} />
             </div>
           </div>
           <span className="text-Text font-heading font-semibold text-md">{prevPrice}</span>
