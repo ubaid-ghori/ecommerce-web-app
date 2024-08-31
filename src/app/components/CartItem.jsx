@@ -1,21 +1,37 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { ProductCategoryData } from '../data/ProductCategoryData';
+import React from "react";
+import Button from '../components/Button';
+import Link from 'next/link';
+import { useSelector } from "react-redux";
+import CartItem from "../components/CartItem";
 
-const CartItem = ({ data }) => {
-  const { productId, quantity } = data;
-  const [detail, setDetail] = useState({});
-
-  useEffect(() => {
-    const findDetails = ProductCategoryData.find((item) => item.id === productId);
-    setDetail(findDetails);
-  }, [productId]);
+const Cart = () => {
+  const carts = useSelector(store => store.cart.items);
 
   return (
-    <div>
-      <h3>{detail?.title} - Quantity: {quantity}</h3>
+    <div className="pt-20 flex flex-col justify-center">
+      <div>
+        {carts.length ? (
+          carts.map((item, index) => <CartItem key={index} data={item} />)
+        ) : (
+          <h2 className="text-Text text-4xl font-bold font-body text-center">
+            Your cart is empty
+          </h2>
+        )}
+      </div>
+      <div className="flex justify-center items-center mt-10">
+        <Button>
+          <Link href="/">Continue Shopping</Link>
+        </Button>
+      </div>
+      <div>
+        <h2 className="text-Text text-xl font-bold font-heading mt-10 text-center">Have an account?</h2>
+        <p className="text-Text font-medium font-body text-md mt-2 text-center">
+          <a className="underline" href="/">Log in</a> to check out faster.
+        </p>
+      </div>
     </div>
   );
 };
 
-export default CartItem;
+export default Cart;

@@ -1,34 +1,34 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React,{useState,useEffect} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ResponsiveNav from "../components/ResponsiveNav";
 import SearchInput from "../components/SearchInput";
 import CartIcon from "../components/CartIcon";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; 
 import { useSelector } from "react-redux";
 
+const [totalquantity, setTotalQuantity] = useState(0);
+const carts=useSelector(store=>store.cart.items)
+useEffect(()=>{
+let total=0;
+carts.forEach((item)=>{
+  total+=item.quantity
+  setTotalQuantity(total)
+})
+},[carts])
+
+const navItems = [
+  { name: "Home", link: "/", special: true },
+  { name: "Store", link: "/Products" },
+  { name: "About", link: "/About" },
+  { name: "Blog", link: "/Blog" },
+  { name: "Contact", link: "/Contact" },
+];
+
 const Navbar = () => {
-  const [totalQuantity, setTotalQuantity] = useState(0);
-  const carts = useSelector((store) => store.cart.items);
-  const pathname = usePathname();
-  const router = useRouter();
-
-  useEffect(() => {
-    let total = 0;
-    carts.forEach((item) => {
-      total += item.quantity;
-    });
-    setTotalQuantity(total);
-  }, [carts]);
-
-  const navItems = [
-    { name: "Home", link: "/", special: true },
-    { name: "Store", link: "/Products" },
-    { name: "About", link: "/About" },
-    { name: "Blog", link: "/Blog" },
-    { name: "Contact", link: "/Contact" },
-  ];
+  const pathname = usePathname(); 
+  const router = useRouter(); 
 
   return (
     <div className="px-4 lg:px-20 shadow-sm">
@@ -37,12 +37,7 @@ const Navbar = () => {
           <ResponsiveNav navItems={navItems} />
         </div>
         <div>
-          <Image
-            src="/assets/images/Logo.png"
-            width={160}
-            height={160}
-            alt="Logo"
-          />
+          <Image src="/assets/images/Logo.png" width={160} height={160} alt="Logo" />
         </div>
         <div className="hidden lg:flex gap-8">
           {navItems.map((item, index) => (
@@ -68,7 +63,7 @@ const Navbar = () => {
           >
             <CartIcon />
             <span className="absolute -top-1 -right-2 bg-[#FFD700] text-white rounded-full w-5 h-5 flex items-center justify-center">
-              {totalQuantity}
+              {totalquantity}
             </span>
           </div>
         </div>
