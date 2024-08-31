@@ -11,8 +11,8 @@ const navItems = [
   { name: "Home", link: "/", special: true },
   { name: "Store", link: "/Products" },
   { name: "About", link: "/About" },
-  { name: "Blog", link: "/" },
-  { name: "Contact", link: "/" },
+  { name: "Blog", link: "/Blog" },
+  { name: "Contact", link: "/Contact" },
 ];
 
 const Navbar = () => {
