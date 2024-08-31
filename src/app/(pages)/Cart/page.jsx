@@ -1,11 +1,20 @@
+"use client"
 import React from "react";
 import Button from '../../components/Button'
 import Link from 'next/link'
 import { useSelector } from "react-redux";
+import CartItem from "../../components/CartItem";
 const Cart = () => {
   const carts=useSelector(store=>store.cart.items)
   return (
     <div className="pt-20 flex flex-col  justify-center">
+
+      <div>
+        {carts.map((item,index)=>
+        <CartItem />
+        )}
+      </div>
+
       <h2 className=" text-Text text-4xl font-bold font-body text-center ">
       Your cart is empty
       </h2>
