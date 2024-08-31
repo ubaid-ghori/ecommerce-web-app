@@ -3,11 +3,14 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { CircleCheckBig, Heart, Share, Share2,Plus,Minus } from 'lucide-react';
 import Button from './Button';
-const DetailCard = ({ title, image, desc, price, btnText }) => {
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../Stores/cart';
+const DetailCard = ({ title, image, desc, price, btnText,id }) => {
   const [zoom, setZoom] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef(null);
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = imageRef.current.getBoundingClientRect();
@@ -27,6 +30,12 @@ const DetailCard = ({ title, image, desc, price, btnText }) => {
     setQuantity(quantity + 1)
   }
 
+  const handleAddToCart = () => {
+    dispatch(addToCart({
+      productId:id,
+      quantity:quantity
+    }))
+  }
   return (
     <div className="md:px-20 px-4 pt-20">
       <div className="lg:flex block gap-20 items-center ">
@@ -71,7 +80,9 @@ const DetailCard = ({ title, image, desc, price, btnText }) => {
             <Minus onClick={hanldeMinus} />
          </div>
          <div>
-            <Button className={`!bg-white hover:bg-bgColor !text-Text border-2 border-Text`}>Add To Cart</Button>
+            <Button className={`!bg-white hover:bg-bgColor !text-Text border-2 border-Text`}
+            onClick={handleAddToCart}
+            >Add To Cart</Button>
          </div>
          </div>
          <div className=''>
