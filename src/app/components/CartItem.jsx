@@ -1,18 +1,21 @@
-"use clinet"
-import React,{useState,useEffect} from 'react'
-import { ProductCategoryData } from '../data/ProductCategoryData' 
-const CartItem = ({id,image,price}) => {
-    const {id,image,price} = props
-    const [productId,quantity]=props.data
-    const [detail,setdetails]=useState([])
-    useEffect(()=>{
-    const findDetails= ProductCategoryData.find((item)=>item.id===productId)[0]
-    setdetails(findDetails)
-    },[productId])
-    console.log(detail)
-  return (
-    <div>CartItem</div>
-  )
-}
+"use client";
+import React, { useState, useEffect } from 'react';
+import { ProductCategoryData } from '../data/ProductCategoryData';
 
-export default CartItem
+const CartItem = ({ data }) => {
+  const { productId, quantity } = data;
+  const [detail, setDetail] = useState({});
+
+  useEffect(() => {
+    const findDetails = ProductCategoryData.find((item) => item.id === productId);
+    setDetail(findDetails);
+  }, [productId]);
+
+  return (
+    <div>
+      <h3>{detail?.title} - Quantity: {quantity}</h3>
+    </div>
+  );
+};
+
+export default CartItem;
