@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,10 +15,7 @@ const Navbar = () => {
   const router = useRouter();
 
   useEffect(() => {
-    let total = 0;
-    carts.forEach((item) => {
-      total += item.quantity;
-    });
+    const total = carts.reduce((sum, item) => sum + item.quantity, 0);
     setTotalQuantity(total);
   }, [carts]);
 
