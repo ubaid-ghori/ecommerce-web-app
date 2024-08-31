@@ -7,6 +7,7 @@ const DetailCard = ({ title, image, desc, price, btnText }) => {
   const [zoom, setZoom] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const imageRef = useRef(null);
+  const [quantity, setQuantity] = useState(1);
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } = imageRef.current.getBoundingClientRect();
@@ -17,6 +18,14 @@ const DetailCard = ({ title, image, desc, price, btnText }) => {
 
   const handleMouseEnter = () => setZoom(true);
   const handleMouseLeave = () => setZoom(false);
+
+  const hanldeMinus=()=>{
+    setQuantity(quantity-1 < 1 ? 1 : quantity - 1 )
+  }
+
+  const hanldePlus=()=>{
+    setQuantity(quantity + 1)
+  }
 
   return (
     <div className="md:px-20 px-4 pt-20">
@@ -57,9 +66,9 @@ const DetailCard = ({ title, image, desc, price, btnText }) => {
          </div>
          <div className='lg:flex block gap-4 '>
          <div className='flex cursor-pointer w-full lg:w-36 justify-center items-center gap-4 border rounded-full p-2 border-Text lg:mb-0 mb-5'> 
-            <Plus />
-            <h2>1</h2>
-            <Minus />
+            <Plus onClick={hanldePlus} />
+            <h2>{quantity}</h2>
+            <Minus onClick={hanldeMinus} />
          </div>
          <div>
             <Button className={`!bg-white hover:bg-bgColor !text-Text border-2 border-Text`}>Add To Cart</Button>
