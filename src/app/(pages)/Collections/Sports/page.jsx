@@ -54,6 +54,7 @@ const Sports = () => {
           {currentProducts.map((product, index) => (
             <Link key={index} href={`/Sports/${product?.id}`}>
               <ProductCategoryCard 
+               key={index}
                 id={product.id}
                 img={product.img} 
                 title={product.title} 
