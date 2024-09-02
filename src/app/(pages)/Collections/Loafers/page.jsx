@@ -56,6 +56,7 @@ const Loafers = () => {
         {currentProducts.map((product, index) => (
           <Link key={index} href={`/Loafers/${product?.id}`}>
           <ProductCategoryCard 
+            id={product.id}
             key={index} 
             product={product} 
             img={product.img} 
