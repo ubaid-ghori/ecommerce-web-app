@@ -55,6 +55,7 @@ const Formal = () => {
         {currentProducts.map((product, index) => (
          <Link href={`/Formal/${product.id}`} key={index}>
           <ProductCategoryCard 
+            id={product.id}
             key={index} 
             product={product} 
             img={product.img} 
