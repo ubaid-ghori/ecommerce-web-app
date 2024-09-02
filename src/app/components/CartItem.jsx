@@ -14,7 +14,7 @@ const CartItem = ({ data }) => {
 
   return (
     <div>
-     <img src={detail?.image} alt={detail?.name}  />
+     <img src={detail?.img} alt={detail?.name}  />
      <h3>{detail?.title}</h3>
     </div>
   );
