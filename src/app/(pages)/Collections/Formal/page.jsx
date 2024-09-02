@@ -53,7 +53,7 @@ const Formal = () => {
         </div>
       <div className='flex flex-wrap justify-center gap-5 pt-10'>
         {currentProducts.map((product, index) => (
-         <Link href={`/Formal/${product.id}`}>
+         <Link href={`/Formal/${product.id}`} key={index}>
           <ProductCategoryCard 
             id={product.id}
             key={index} 
