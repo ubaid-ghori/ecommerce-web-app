@@ -1,13 +1,11 @@
 import React from 'react';
-
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 const SkeletonCard = () => {
   return (
-    <div className="w-full h-64 bg-gray-300 animate-pulse rounded-lg">
-      <div className="w-full h-36 bg-gray-400 mb-4 rounded-t-lg"></div>
-      <div className="px-4">
-        <div className="w-3/4 h-4 bg-gray-400 mb-2 rounded"></div>
-        <div className="w-1/2 h-4 bg-gray-400 rounded"></div>
-      </div>
+    <div className="w-full h-full">
+       <Skeleton height={40} width={`60%`} className="mb-4" />
+       <Skeleton count={5} height={25} className="mb-2" />
     </div>
   );
 };
