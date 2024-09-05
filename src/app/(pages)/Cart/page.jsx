@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Button from '../../components/Button';
-import Link from 'next/link';
+import Button from "../../components/Button";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import CartItem from "../../components/CartItem";
 
