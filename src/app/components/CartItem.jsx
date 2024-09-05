@@ -14,7 +14,7 @@ const CartItem = ({ data }) => {
   console.log(detail);
 
   return (
-    <div>
+    <div className=" flex justify-center items-center gap-4">
       <img src={detail?.img} alt={detail?.name} />
       <h3>{detail?.title}</h3>
     </div>
