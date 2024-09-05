@@ -10,7 +10,7 @@ const CartItem = ({ data }) => {
     const findDetails = SportsData.find((item) => item.id === productId);
     setDetail(findDetails);
   }, [productId]);
-  console.log(detail);
+  // console.log(detail);
 
   return (
     <div>
