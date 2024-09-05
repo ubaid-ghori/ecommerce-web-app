@@ -11,7 +11,7 @@ const Cart = () => {
   return (
     <div className="pt-20 flex flex-col justify-center items-center">
       <div>
-        {carts.length ? (
+        {carts.length > 0 ? (
           carts.map((item, index) => <CartItem key={index} data={item} />)
         ) : (
           <div className="text-center">
