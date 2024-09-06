@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import ProductCategoryListData from "../data/ProductCategoryListData";
+import SportsData from "../data/SportsData";
 import { useParams } from "next/navigation";
 
 const CartItem = ({ data }) => {
@@ -8,7 +8,7 @@ const CartItem = ({ data }) => {
   const [detail, setDetail] = useState([]);
 
   useEffect(() => {
-    const findDetails = ProductCategoryListData.find((item) => item.id === productId);
+    const findDetails = SportsData.find((item) => item.id === productId);
     setDetail(findDetails);
   }, [productId]);
   console.log(detail);
