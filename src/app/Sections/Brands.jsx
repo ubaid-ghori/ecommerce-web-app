@@ -11,7 +11,7 @@ const Brands = () => {
     </div>
     <div className='lg:flex block cursor-pointer  gap-5 pt-20' data-aos="fade-up">
         {BrandData?.map((brand,index)=>(
-            <div>
+            <div className='transform hover:-translate-y-3 transition-transform duration-300 '>
                 <img src={brand?.img} alt="" />
                 <div className='flex justify-center items-center p-2'>  
                 <img src={brand.img2} className='' alt="" />

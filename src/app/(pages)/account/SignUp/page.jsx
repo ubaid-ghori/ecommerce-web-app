@@ -18,36 +18,54 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      await validateForm.validate(formData,{abortEarly:false});
-      console.log("Form Submitted" , formData);
+    try {
+      await validateForm.validate(formData, { abortEarly: false });
+      console.log("Form Submitted", formData);
+    } catch (err) {
+      console.log(err.inner);   
     }
-    catch(err){
-      console.log(err.inner);
-    }
-  };  
+  };
 
-  const validateForm=yup.object({
-    firstname:yup.string().required("First name is required"),
-    lastname:yup.string().required("Last name is required"),
-    email:yup.string().email("Invalid email").required("Email is required"),
-    password:yup.string().min(8,"Password must be at least 6 characters").required("Password is required")
-    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/, "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character")
-    .matches(/^(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/, "Password must contain at least one special character")
-    .matches(/^(?=.*[0-9]).{8,}$/, "Password must contain at least one number")
-    .matches(/^(?=.*[a-z]).{8,}$/, "Password must contain at least one lowercase letter")
-    .matches( /^(?=.*[A-Z]).{8,}$/, "Password must contain at least one uppercase letter")
-    ,
-    confirmPassword:yup.string().oneOf([yup.ref("password"), null], "Passwords must match")
-  })
+  const validateForm = yup.object({
+    firstname: yup.string().required("First name is required"),
+    lastname: yup.string().required("Last name is required"),
+    email: yup.string().email("Invalid email").required("Email is required"),
+    password: yup
+      .string()
+      .min(8, "Password must be at least 8 characters")
+      .required("Password is required")
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+        "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character"
+      )
+      .matches(
+        /^(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/,
+        "Password must contain at least one special character"
+      )
+      .matches(
+        /^(?=.*[0-9]).{8,}$/,
+        "Password must contain at least one number"
+      )
+      .matches(
+        /^(?=.*[a-z]).{8,}$/,
+        "Password must contain at least one lowercase letter"
+      )
+      .matches(
+        /^(?=.*[A-Z]).{8,}$/,
+        "Password must contain at least one uppercase letter"
+      ),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password"), null], "Passwords must match"),
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   return (
     <div className="flex justify-center items-center px-4 mt-20 mb-20">
@@ -95,7 +113,9 @@ const SignUp = () => {
             value={formData.confirmPassword}
             onChage={handleChange}
           />
-          <Button className="  w-60 !lg:w-96 mt-4 mb-5" type='submit'>Sign Up</Button>
+          <Button className="  w-60 !lg:w-96 mt-4 mb-5" type="submit">
+            Sign Up
+          </Button>
         </form>
       </div>
     </div>
