@@ -41,12 +41,38 @@ const SignUp = () => {
       await validateForm.validate(formData, { abortEarly: false });
       console.log("Form Submitted", formData);
       setErrors({});
-    } catch (err) {
-      const errorMessages = {};
-      err.inner.forEach((error) => {
-        errorMessages[error.path] = error.message;
+
+      const { firstname, lastname, email, password } = formData;
+      const name = `${firstname} ${lastname}`;
+
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstname, lastname, email, password }),
       });
-      setErrors(errorMessages);
+
+      if (res.ok) {
+        console.log("User registered successfully");
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+        });
+      } else {
+        console.log("User failed to register");
+      }
+    } catch (err) {
+      if (err.name === "ValidationError") {
+        const errorMessages = {};
+        err.inner.forEach((error) => {
+          errorMessages[error.path] = error.message;
+        });
+        setErrors(errorMessages);
+      } else {
+        console.log(err, "Error during registration");
+      }
     }
   };
 
