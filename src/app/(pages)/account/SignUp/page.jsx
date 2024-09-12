@@ -1,9 +1,11 @@
 "use client";
 import Input from "../../../components/Input";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Correct import for useRouter
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Button from "../../../components/Button";
 import * as yup from "yup";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../../../api/auth/[...nextauth]/route";
 
 const SignUp = () => {
   const router = useRouter();
@@ -16,6 +18,16 @@ const SignUp = () => {
   });
 
   const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    const checkSession = async () => {
+      const session = await getServerSession(authOptions);
+      if (session) {
+        router.push("/dashboard");
+      }
+    };
+    checkSession();
+  }, [router]);
 
   const validateForm = yup.object({
     firstname: yup.string().required("First name is required"),
@@ -39,7 +51,6 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await validateForm.validate(formData, { abortEarly: false });
-      console.log("Form Submitted", formData);
       setErrors({}); // Clear previous errors
 
       const { firstname, lastname, email, password } = formData;
@@ -58,8 +69,7 @@ const SignUp = () => {
       const userData = await resUserExists.json();
 
       if (userData.exists) {
-        console.log("User already exists");
-        setErrors({ email: "User with this email already exists" }); // Set error for email
+        setErrors({ email: "User with this email already exists" });
         return;
       }
 
@@ -70,7 +80,6 @@ const SignUp = () => {
       });
 
       if (res.ok) {
-        console.log("User registered successfully");
         setFormData({
           firstname: "",
           lastname: "",
@@ -90,7 +99,7 @@ const SignUp = () => {
         });
         setErrors(errorMessages);
       } else {
-        console.log(err, "Error during registration");
+        console.log("Error during registration:", err);
       }
     }
   };
