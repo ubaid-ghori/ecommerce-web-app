@@ -14,9 +14,12 @@ const authOptions = {
     }),
   ],
   Session: {
-      strategy:'jwt'
+    strategy: "jwt",
   },
-  secret:{
-
-  }
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/account/Login",
+  },
 };
+const {handler}=NextAuth(authOptions);
+export { handler as GET, handler as POST };
