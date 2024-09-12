@@ -1,9 +1,9 @@
 "use client";
-import Input from "../../../components/Input";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "../../../components/Button";
 import { signIn } from "next-auth/react";
+import Input from "../../../components/Input";
+import Button from "../../../components/Button";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +23,7 @@ const Login = () => {
         setError("Invalid credentials");
         return;
       }
-      router.replace("/");
+      router.replace("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -40,16 +40,16 @@ const Login = () => {
           className="flex flex-col justify-start items-center gap-4 mt-5"
         >
           <Input
-            placeholder={"Email"}
-            type={"email"}
+            placeholder="Email"
+            type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
           <Input
-            placeholder={"Password"}
-            type={"password"}
+            placeholder="Password"
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button className=" w-60 !lg:w-96 mt-4 mb-5">Sign In</Button>
+          <Button className="w-60 lg:w-96 mt-4 mb-5">Sign In</Button>
         </form>
         <div className="text-Text cursor-pointer font-semibold font-body mt-3 flex justify-between items-center px-4 border-t pb-3 border-black pt-4">
           <p>Forgot Password</p>
