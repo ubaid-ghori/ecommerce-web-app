@@ -4,9 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation"; // Correct import for useRouter
 import Button from "./Button";
 import * as yup from "yup";
-// import { getServerSession } from "next-auth";
-// import { redirect } from "next/navigation";
-// import { authOptions } from "../api/auth/[...nextauth]/route"
+
 
 
 const SignUpForm = () => {
