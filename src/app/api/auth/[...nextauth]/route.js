@@ -1,19 +1,28 @@
-import { Session } from "inspector";
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 const authOptions = {
   providers: [
     CredentialsProvider({
-      name: "Credentials",
-      credentials: {},
+      name: "credentials",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
       async authorize(credentials) {
-        const user = { id: "1" };
-        return user;
+        // Here, you should perform user validation against your backend or database
+        // Example mock user for illustration
+        const user = { id: "1", email: credentials.email };
+
+        if (user) {
+          return user;
+        } else {
+          return null;
+        }
       },
     }),
   ],
-  Session: {
+  session: {
     strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
@@ -21,5 +30,8 @@ const authOptions = {
     signIn: "/account/Login",
   },
 };
-const {handler}=NextAuth(authOptions);
+
+// Export NextAuth handler
+const handler = NextAuth(authOptions);
+
 export { handler as GET, handler as POST };

@@ -1,11 +1,33 @@
 "use client";
 import Input from "../../../components/Input";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Button from "../../../components/Button";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const router = useRouter();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await signIn("credentials", {
+        redirect: false,
+        email,
+        password,
+      });
+      if (res.error) {
+        setError("Invalid credentials");
+        return;
+      }
+      router.replace("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="flex justify-center items-center px-4 mt-20 mb-20">
@@ -13,14 +35,23 @@ const Login = () => {
         <h1 className="text-Text font-semibold text-3xl lg:text-4xl font-heading text-center py-4">
           Log In
         </h1>
-        <div className="flex flex-col justify-start items-center gap-4 mt-5">
-          <Input placeholder={"Email"} type={'email'} />
-          <Input placeholder={"Password"} type={'password'} />
-          <Button className=" w-60 !lg:w-96 mt-4 mb-5">
-            Sign In
-          </Button>
-        </div>
-        <div className=" text-Text cursor-pointer font-semibold font-body mt-3 flex justify-between items-center px-4 border-t pb-3 border-black pt-4">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col justify-start items-center gap-4 mt-5"
+        >
+          <Input
+            placeholder={"Email"}
+            type={"email"}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            placeholder={"Password"}
+            type={"password"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button className=" w-60 !lg:w-96 mt-4 mb-5">Sign In</Button>
+        </form>
+        <div className="text-Text cursor-pointer font-semibold font-body mt-3 flex justify-between items-center px-4 border-t pb-3 border-black pt-4">
           <p>Forgot Password</p>
           <p onClick={() => router.push("/account/SignUp")}>Sign Up</p>
         </div>

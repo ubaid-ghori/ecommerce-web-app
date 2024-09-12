@@ -1,7 +1,7 @@
 "use client";
 import Input from "../../../components/Input";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"; // Correct import for useRouter
 import Button from "../../../components/Button";
 import * as yup from "yup";
 
@@ -78,6 +78,7 @@ const SignUp = () => {
           password: "",
           confirmPassword: "",
         });
+        router.push("/account/Login");
       } else {
         console.log("User failed to register");
       }
@@ -144,7 +145,7 @@ const SignUp = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            error={errors.email} // Ensure error is passed here
+            error={errors.email}
           />
           <Input
             placeholder="Password"
