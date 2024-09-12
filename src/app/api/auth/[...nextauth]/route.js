@@ -10,8 +10,6 @@ const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        // Here, you should perform user validation against your backend or database
-        // Example mock user for illustration
         const user = { id: "1", email: credentials.email };
 
         if (user) {
