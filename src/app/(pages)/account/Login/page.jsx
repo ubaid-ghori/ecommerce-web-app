@@ -27,7 +27,7 @@ const Login = () => {
         return;
       }
 
-      router.replace("dashboard");
+      router.replace("/dashboard");
     } catch (error) {
       console.error("Unexpected error:", error);
       setError("An unexpected error occurred");
