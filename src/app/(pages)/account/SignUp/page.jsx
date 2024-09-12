@@ -40,18 +40,28 @@ const SignUp = () => {
     try {
       await validateForm.validate(formData, { abortEarly: false });
       console.log("Form Submitted", formData);
-      setErrors({});
+      setErrors({}); // Clear previous errors
 
       const { firstname, lastname, email, password } = formData;
-      const name = `${firstname} ${lastname}`;
 
-      // const res=await fetch("api/userExists",{
-      //   method:"POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ email }),
-      // });
+      const resUserExists = await fetch("/api/userExists", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
 
-      // const {user} = await res.json();
+      if (!resUserExists.ok) {
+        console.log("Error checking user existence");
+        return;
+      }
+
+      const userData = await resUserExists.json();
+
+      if (userData.exists) {
+        console.log("User already exists");
+        setErrors({ email: "User with this email already exists" }); // Set error for email
+        return;
+      }
 
       const res = await fetch("/api/register", {
         method: "POST",
@@ -134,7 +144,7 @@ const SignUp = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            error={errors.email}
+            error={errors.email} // Ensure error is passed here
           />
           <Input
             placeholder="Password"
