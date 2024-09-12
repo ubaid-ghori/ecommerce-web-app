@@ -45,6 +45,19 @@ const SignUp = () => {
       const { firstname, lastname, email, password } = formData;
       const name = `${firstname} ${lastname}`;
 
+      const resUserExists = await fetch("api/userExists", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const { user } = await resUserExists.json();
+
+      if (user) {
+        setErrors({ email: "Email already exists" });
+        return;
+      }
+
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
