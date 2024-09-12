@@ -1,5 +1,4 @@
-// AuthProvider.js
-"use client"; // Add this directive to mark it as a client component
+"use client"; 
 
 import { SessionProvider } from "next-auth/react";
 
