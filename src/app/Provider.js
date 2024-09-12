@@ -1,10 +1,10 @@
-"use client"
-import { SessionProvider } from "next-auth/react"
+// AuthProvider.js
+"use client"; // Add this directive to mark it as a client component
 
-export const AuthProvider = ({ children }) => {
-  return (
-    <SessionProvider>
-      {children}
-    </SessionProvider>
-  )
-}
+import { SessionProvider } from "next-auth/react";
+
+const AuthProvider = ({ children }) => {
+  return <SessionProvider>{children}</SessionProvider>;
+};
+
+export default AuthProvider;
