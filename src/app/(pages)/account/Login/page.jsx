@@ -13,19 +13,24 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const res = await signIn("credentials", {
-        redirect: false,
         email,
         password,
+        redirect: false,
       });
+
       if (res.error) {
-        setError("Invalid credentials");
+        setError("Invalid Credentials");
+        console.error("Sign in error:", res.error);
         return;
       }
-      router.replace("/dashboard");
+
+      router.replace("dashboard");
     } catch (error) {
-      console.log(error);
+      console.error("Unexpected error:", error);
+      setError("An unexpected error occurred");
     }
   };
 
@@ -49,7 +54,13 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
+
           <Button className="w-60 lg:w-96 mt-4 mb-5">Sign In</Button>
+          {error && (
+            <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
+              {error}
+            </div>
+          )}
         </form>
         <div className="text-Text cursor-pointer font-semibold font-body mt-3 flex justify-between items-center px-4 border-t pb-3 border-black pt-4">
           <p>Forgot Password</p>
