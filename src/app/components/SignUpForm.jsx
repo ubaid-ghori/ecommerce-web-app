@@ -1,14 +1,13 @@
 "use client";
+
 import Input from "./Input";
 import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Correct import for useRouter
+import { useRouter } from "next/navigation";
 import Button from "./Button";
+import { signIn } from "next-auth/react";
 import * as yup from "yup";
 
-
-
 const SignUpForm = () => {
-
   const router = useRouter();
   const [formData, setFormData] = useState({
     firstname: "",
@@ -42,7 +41,6 @@ const SignUpForm = () => {
     e.preventDefault();
     try {
       await validateForm.validate(formData, { abortEarly: false });
-      console.log("Form Submitted", formData);
       setErrors({}); // Clear previous errors
 
       const { firstname, lastname, email, password } = formData;
@@ -61,8 +59,7 @@ const SignUpForm = () => {
       const userData = await resUserExists.json();
 
       if (userData.exists) {
-        console.log("User already exists");
-        setErrors({ email: "User with this email already exists" }); // Set error for email
+        setErrors({ email: "User with this email already exists" });
         return;
       }
 
@@ -73,15 +70,19 @@ const SignUpForm = () => {
       });
 
       if (res.ok) {
-        console.log("User registered successfully");
-        setFormData({
-          firstname: "",
-          lastname: "",
-          email: "",
-          password: "",
-          confirmPassword: "",
+        // Automatically sign in the user after successful registration
+        const signInResponse = await signIn("credentials", {
+          email,
+          password,
+          redirect: false,
         });
-        router.push("/dashboard");
+
+        if (!signInResponse.error) {
+          // Redirect to dashboard if sign-in is successful
+          router.push("/dashboard");
+        } else {
+          console.error("Sign-in error:", signInResponse.error);
+        }
       } else {
         console.log("User failed to register");
       }
@@ -121,7 +122,6 @@ const SignUpForm = () => {
             Sign In
           </span>
         </p>
-
         <form
           className="flex flex-col justify-start items-center gap-4 mt-5"
           onSubmit={handleSubmit}
@@ -166,9 +166,7 @@ const SignUpForm = () => {
             onChange={handleChange}
             error={errors.confirmPassword}
           />
-          <Button className="w-60 lg:w-96 mt-4 mb-5" type="submit">
-            Sign Up
-          </Button>
+          <Button className="w-60 lg:w-96 mt-4 mb-5">Sign Up</Button>
         </form>
       </div>
     </div>

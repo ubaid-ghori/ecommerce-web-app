@@ -1,11 +1,12 @@
 "use client";
+
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Input from "./Input";
 import Button from "./Button";
 
-const Login = () => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -54,7 +55,6 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-
           <Button className="w-60 lg:w-96 mt-4 mb-5">Sign In</Button>
           {error && (
             <div className="bg-red-500 text-white w-fit text-sm py-1 px-3 rounded-md mt-2">
@@ -71,4 +71,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginForm;
